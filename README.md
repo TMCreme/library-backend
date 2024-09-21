@@ -7,10 +7,24 @@
 * Clone the project and switch to preferred branch
 * Start the project with `docker compose up --build`
 * When the docker container starts running successfully, visit the Swagger API documentation on `http://localhost:8091/api/docs` via the browser
-* To run any migrations, run `docker-compose exec -it app python manage.py migrate`
-* To run tests, run `docker-compose exec -it app python manage.py test`
+* To run any migrations, run `docker-compose run --rm app app sh -c "python manage.py migrate"`
+* To run tests, run `docker compose run --rm app sh -c "python manage.py test"`
 
 ## Deploying 
+
+# Project Structure
+
+The project follows a standard dbt project structure:
+
+```
+project_name/
+|
+|--- core
+|--- libraryms
+|--- scripts
+|--- utils
+```
+
 
 ## Contributing
 

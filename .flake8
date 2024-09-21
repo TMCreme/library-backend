@@ -6,4 +6,5 @@ exclude =
   __pycache__,
   manage.py,
   settings.py,
-  tasks.py
+  tasks.py,
+  wait_for_db.py
