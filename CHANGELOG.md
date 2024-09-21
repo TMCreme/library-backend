@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.2.2] - 2024-09-21
+
+### Bug
+
+- Add scripts directory
+
 ## [0.2.1] - 2024-09-21
 
 ### 📚 Documentation
