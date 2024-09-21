@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.2.3] - 2024-09-21
+
+### Bug
+
+- Add flake8 required package
+
 ## [0.2.2] - 2024-09-21
 
 ### Bug
