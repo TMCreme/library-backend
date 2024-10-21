@@ -18,7 +18,7 @@ from typing import Any
 from django.contrib import admin
 from django.urls import (
     path,
-    # include
+    include
 )
 
 from drf_spectacular.views import (
@@ -37,4 +37,6 @@ urlpatterns: list[Any] = [
         ),
         name="api-docs",
     ),
+    path('', include('student.urls')),
+    path("", include("book.urls")),
 ]
