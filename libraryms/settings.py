@@ -57,6 +57,7 @@ THIRD_PARTY_APPS: list[str] = [
 REGISTERED_APPS: list[str] = [
     "core",
     "book",
+    "student",
 ]
 
 INSTALLED_APPS: list[str] = BUILTIN_INSTALLED_APPS + THIRD_PARTY_APPS + REGISTERED_APPS
