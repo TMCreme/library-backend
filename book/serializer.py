@@ -1,5 +1,4 @@
 from rest_framework import serializers
-from datetime import date
 
 from .models import Book
 
@@ -10,9 +9,9 @@ from .models import Book
 #         if data > date.today():
 #             raise serializers.ValidationError("Published date cannot be after today")
 #         return data
-        
+
+
 class BookSerializer(serializers.ModelSerializer):
     class Meta:
         model = Book
-        fields = ['id', 'title', 'author', 'isbn', 'date_published', 'publisher']
-
+        fields = ["id", "title", "author", "isbn", "date_published", "publisher"]
