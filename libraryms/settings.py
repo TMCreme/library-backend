@@ -55,7 +55,9 @@ THIRD_PARTY_APPS: list[str] = [
 ]
 
 REGISTERED_APPS: list[str] = [
-    "core"
+    "core",
+    "book",
+    "student",
 ]
 
 INSTALLED_APPS: list[str] = BUILTIN_INSTALLED_APPS + THIRD_PARTY_APPS + REGISTERED_APPS
@@ -192,47 +194,47 @@ CORS_ALLOWED_ORIGINS = [
 CSRF_TRUSTED_ORIGINS = []
 
 # Logging
-if "test" in sys.argv:
-    logging.disable(level=logging.CRITICAL)
-else:
-    LOGGING = {
-        "version": 1,
-        "disable_existing_loggers": False,
-        "formatters": {
-            "verbose": {
-                "format": "{asctime} | {levelname} | {module}| {funcName}:{lineno}d | {process:d} | {thread:d} | {message}",
-                "style": "{",
-            },
-            "simple": {
-                "format": "{levelname} {message}",
-                "style": "{",
-            },
-        },
-        "handlers": {
-            "file": {
-                "level": "DEBUG",
-                "class": "logging.FileHandler",
-                "filename": f"/var/log/{os.environ.get('LOGGER_FILENAME', 'backend.log')}",
-                "formatter": "verbose",
-            },
-            # "database": {
-            #     "level": "INFO",
-            #     "class": "utils.custom_logger.DatabaseLogHandler",
-            # },
-            "mail_admins": {
-                "level": "ERROR",
-                "class": "django.utils.log.AdminEmailHandler",
-                # 'filters': ['special']
-            },
-        },
-        "loggers": {
-            "": {
-                "handlers": ["file"],
-                "level": "DEBUG",
-                "propagate": True,
-            }
-        },
-    }
+# if "test" in sys.argv:
+#     logging.disable(level=logging.CRITICAL)
+# else:
+#     LOGGING = {
+#         "version": 1,
+#         "disable_existing_loggers": False,
+#         "formatters": {
+#             "verbose": {
+#                 "format": "{asctime} | {levelname} | {module}| {funcName}:{lineno}d | {process:d} | {thread:d} | {message}",
+#                 "style": "{",
+#             },
+#             "simple": {
+#                 "format": "{levelname} {message}",
+#                 "style": "{",
+#             },
+#         },
+#         "handlers": {
+#             "file": {
+#                 "level": "DEBUG",
+#                 "class": "logging.FileHandler",
+#                 "filename": f"/var/log/{os.environ.get('LOGGER_FILENAME', 'backend.log')}",
+#                 "formatter": "verbose",
+#             },
+#             # "database": {
+#             #     "level": "INFO",
+#             #     "class": "utils.custom_logger.DatabaseLogHandler",
+#             # },
+#             "mail_admins": {
+#                 "level": "ERROR",
+#                 "class": "django.utils.log.AdminEmailHandler",
+#                 # 'filters': ['special']
+#             },
+#         },
+#         "loggers": {
+#             "": {
+#                 "handlers": ["file"],
+#                 "level": "DEBUG",
+#                 "propagate": True,
+#             }
+#         },
+#     }
 
 # DRF Spectacular for Swagger
 SPECTACULAR_SETTINGS = {
